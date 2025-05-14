@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 210 60% 95%;
+    --foreground: 210 25% 10%;
+    --card: 210 60% 98%;
+    --card-foreground: 210 25% 20%;
+    --popover: 210 70% 97%;
+    --popover-foreground: 210 25% 15%;
+    --primary: 210 100% 80%;
+    --primary-foreground: 210 25% 10%;
+    --secondary: 210 100% 85%;
+    --secondary-foreground: 210 25% 15%;
+    --muted: 210 70% 90%;
+    --muted-foreground: 210 25% 30%;
+    --accent: 210 100% 70%;
+    --accent-foreground: 210 25% 15%;
+    --destructive: 0 100% 70%;
+    --destructive-foreground: 210 25% 10%;
+    --border: 210 50% 90%;
+    --input: 0 0% 100%;
+    --ring: 210 100% 70%;
+    --radius: 0.5rem;
+  }
+ 
+  .dark {
+    --background: 210 60% 5%;
+    --foreground: 210 25% 90%;
+    --card: 210 60% 2%;
+    --card-foreground: 210 25% 80%;
+    --popover: 210 70% 3%;
+    --popover-foreground: 210 25% 85%;
+    --primary: 210 100% 20%;
+    --primary-foreground: 210 25% 90%;
+    --secondary: 210 100% 15%;
+    --secondary-foreground: 210 25% 85%;
+    --muted: 210 70% 10%;
+    --muted-foreground: 210 25% 70%;
+    --accent: 210 100% 30%;
+    --accent-foreground: 210 25% 85%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 210 25% 90%;
+    --border: 210 50% 10%;
+    --input: 0 0% 0%;
+    --ring: 210 100% 30%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Tiptap Editor Styles */
+.ProseMirror {
+  @apply min-h-[200px] outline-none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  @apply text-muted-foreground;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+
+.ProseMirror h1 {
+  @apply text-3xl font-bold mb-4 mt-6;
+}
+
+.ProseMirror h2 {
+  @apply text-2xl font-semibold mb-3 mt-5;
+}
+
+.ProseMirror ul {
+  @apply list-disc pl-5 mb-4;
+}
+
+.ProseMirror ol {
+  @apply list-decimal pl-5 mb-4;
+}
+
+.ProseMirror li {
+  @apply mb-1;
+}
+
+.ProseMirror pre {
+  @apply bg-muted p-4 rounded-md my-4 overflow-x-auto;
+}
+
+.ProseMirror code {
+  @apply bg-muted text-muted-foreground px-1.5 py-0.5 rounded font-mono;
+}
+
+.ProseMirror pre code {
+  @apply bg-transparent p-0 text-sm;
+}
+
+/* Override Tailwind's prose styles for Tiptap */
+.prose pre {
+  @apply bg-muted p-4 rounded-md my-4 overflow-x-auto;
+}
+
+.prose code {
+  @apply bg-muted text-muted-foreground px-1.5 py-0.5 rounded font-mono;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0 text-sm;
+}
+
+/* Syntax highlighting styles */
+.hljs-comment,
+.hljs-quote {
+  @apply text-gray-500 italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  @apply text-blue-600 dark:text-blue-400;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.hljs-string,
+.hljs-doctag {
+  @apply text-red-600 dark:text-red-400;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.hljs-subst {
+  @apply font-normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  @apply text-yellow-600 dark:text-yellow-400;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  @apply text-blue-600 dark:text-blue-400 font-normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  @apply text-green-600 dark:text-green-400;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  @apply text-purple-600 dark:text-purple-400;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  @apply text-cyan-600 dark:text-cyan-400;
+}
+
+.hljs-meta {
+  @apply text-gray-600 dark:text-gray-400 font-bold;
+}
+
+.hljs-deletion {
+  @apply bg-red-100 dark:bg-red-900;
+}
+
+.hljs-addition {
+  @apply bg-green-100 dark:bg-green-900;
+}
+
+.hljs-emphasis {
+  @apply italic;
+}
+
+.hljs-strong {
+  @apply font-bold;
+}
